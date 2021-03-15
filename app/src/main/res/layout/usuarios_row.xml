@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="150dp"
+    card_view:cardCornerRadius="4dp"
+    card_view:cardElevation="4dp"
+    card_view:cardUseCompatPadding="true">
+
+    <RelativeLayout
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:background="#9FE3DC">
+
+        <TextView
+            android:id="@+id/txtNombre"
+            android:layout_width="172dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_toRightOf="@+id/imgImagen"
+            android:text="Nombre"
+            android:textColor="@color/black"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+
+        <TextView
+            android:id="@+id/txtCiudad"
+            android:layout_width="201dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtNombre"
+            android:layout_alignLeft="@+id/txtNombre"
+            android:layout_marginTop="20dp"
+            android:text="Ciudad"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+        <TextView
+            android:id="@+id/txtVentas"
+            android:layout_width="97dp"
+            android:layout_height="30dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="289dp"
+            android:layout_marginTop="106dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="4dp"
+            android:text="Ventas:"
+            android:textColor="@color/black"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
