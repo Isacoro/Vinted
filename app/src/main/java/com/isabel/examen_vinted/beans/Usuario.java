@@ -1,43 +1,38 @@
 package com.isabel.examen_vinted.beans;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.util.ArrayList;
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 
 public class Usuario {
 
-    private static final String ID = "idUsuario";
-    private static final String NOMBRE = "nombre";
-    private static final String APELLIDOS = "apellidos";
-    private static final String EMAIL = "email";
-    private static final String PASSWORD = "password";
-    private static final String CIUDAD = "ciudad";
-    private static final String VENTAS = "ventas";
-    private static final String PUNTOS = "puntos";
 
-
-    private int id;
+    @SerializedName("id")
+    @Expose
+    private int idUsuario;
+    @SerializedName("nombre")
+    @Expose
     private String nombre;
+    @SerializedName("apellidos")
     private String apellidos;
+    @SerializedName("email")
+    @Expose
     private String email;
+    @SerializedName("password")
+    @Expose
     private String password;
+    @SerializedName("ciudad")
     private String ciudad;
+    @SerializedName("ventas")
     private int ventas;
+    @SerializedName("puntos")
     private int puntos;
 
-
-    public Usuario() {
-
+    public int getIdUsuario() {
+        return idUsuario;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
+    public void setIdUsuario(int idUsuario) {
+        this.idUsuario = idUsuario;
     }
 
     public String getNombre() {
@@ -96,31 +91,15 @@ public class Usuario {
         this.puntos = puntos;
     }
 
-    public static ArrayList<Usuario> getArrayListFromJSon(JSONArray listaUsuarios){
-        ArrayList<Usuario> lista = null;
-        try {
-            if(listaUsuarios!=null && listaUsuarios.length() > 0 ){
-                lista = new ArrayList<Usuario>();
-            }
-            for (int i = 0; i < listaUsuarios.length(); i++) {
-                JSONObject json_data = listaUsuarios.getJSONObject(i);
-
-                Usuario usuario = new Usuario();
-
-                usuario.setId(json_data.getInt(ID));
-                usuario.setNombre(json_data.getString(NOMBRE));
-                usuario.setApellidos(json_data.getString(APELLIDOS));
-                usuario.setEmail(json_data.getString(EMAIL));
-                usuario.setPassword(json_data.getString(PASSWORD));
-                usuario.setCiudad(json_data.getString(CIUDAD));
-                usuario.setVentas(json_data.getInt(VENTAS));
-                usuario.setPuntos(json_data.getInt(PUNTOS));
-
-                lista.add(usuario);
-            }
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-        return lista;
+    @Override
+    public String toString() {
+        return "Usuario{" +
+                "id=" + idUsuario +
+                ", nombre='" + nombre + '\'' +
+                ", apellidos='" + apellidos + '\'' +
+                ", ciudad='" + ciudad + '\'' +
+                ", password='" + password + '\'' +
+                ", email='" + email + '\'' +
+                '}';
     }
 }

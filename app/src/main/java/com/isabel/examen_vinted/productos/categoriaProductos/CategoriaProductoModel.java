@@ -1,66 +1,46 @@
 package com.isabel.examen_vinted.productos.categoriaProductos;
 
+import android.content.Context;
 import android.os.AsyncTask;
 
+import androidx.annotation.Nullable;
+
 import com.isabel.examen_vinted.beans.Producto;
+import com.isabel.examen_vinted.retrofit.ProductoApi;
 import com.isabel.examen_vinted.utils.Post;
 
 import org.json.JSONArray;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class CategoriaProductoModel implements CategoriaProductoContract.Model {
 
-    private ArrayList<Producto> listaCategoriaProductos;
-    OnCategoriaProductoListener onCategoriaProductoListener;
-
     @Override
-    public void getCategoriaProductosWS(OnCategoriaProductoListener onCategoriaProductoListener, String categoria) {
-        this.onCategoriaProductoListener = onCategoriaProductoListener;
+    public void getCategoriaProductosWS(Context context, OnCategoriaProductoListener onCategoriaProductoListener, String categoria) {
+        ProductoApi productoApi = new ProductoApi(context);
 
-        HashMap<String, String> param = new HashMap<>();
-        param.put("ACTION", "PRODUCTO.FIND_ALL");
-        param.put("FILTRO", "CATEGORIA");
-        param.put("CATEGORIA", categoria);
+        final Call<List<Producto>> request = productoApi.getProductosCategoria(categoria);
 
-        TareaSegundoPlano hilo = new TareaSegundoPlano(param);
-        hilo.execute("http://192.168.1.18:8090/Vinted_Isabel/Controller");
-    }
-
-    class TareaSegundoPlano extends AsyncTask<String, Integer, Boolean> {
-
-        private HashMap<String, String> parametros = null;
-
-        public TareaSegundoPlano(HashMap<String, String> parametros) {
-            super();
-            this.parametros = parametros;
-        }
-
-        @Override
-        protected Boolean doInBackground(String... strings) {
-            String url = strings[0];
-
-            try {
-                Post post = new Post();
-                System.out.println(parametros.toString() + url);
-                JSONArray listaProductos = post.getServerDataPost(parametros, url);
-                listaCategoriaProductos = Producto.getArrayListFromJSon(listaProductos);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-            return true;
-        }
-
-
-        protected void onPostExecute(Boolean respuesta) {
-            if (respuesta) {
-                if (listaCategoriaProductos != null && listaCategoriaProductos.size() > 0) {
-                    onCategoriaProductoListener.onFinished(listaCategoriaProductos);
+        request.enqueue(new Callback<List<Producto>>() {
+            @Override
+            public void onResponse(Call<List<Producto>> call, Response<List<Producto>> response) {
+                if(response != null && response.body() != null){
+                    onCategoriaProductoListener.onFinished(new ArrayList<>(response.body()));
                 }
-            } else {
-                onCategoriaProductoListener.onFailure("Error al traer los datos");
             }
-        }
+
+            @Override
+            public void onFailure(@Nullable  Call<List<Producto>> call, @Nullable Throwable t) {
+                t.printStackTrace();
+                onCategoriaProductoListener.onFailure(t.getLocalizedMessage());
+            }
+        });
     }
 }

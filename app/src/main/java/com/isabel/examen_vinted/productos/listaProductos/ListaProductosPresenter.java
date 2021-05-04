@@ -1,5 +1,7 @@
 package com.isabel.examen_vinted.productos.listaProductos;
 
+import android.content.Context;
+
 import com.isabel.examen_vinted.beans.Producto;
 
 import java.util.ArrayList;
@@ -16,11 +18,11 @@ public class ListaProductosPresenter implements ListaProductosContract.Presenter
 
 
     @Override
-    public void getProductos() {
-        this.listaProductosModel.getProductosWS(new ListaProductosContract.Model.OnListProductosListener() {
+    public void getProductos(Context context) {
+        listaProductosModel.getProductosWS(context, new ListaProductosContract.Model.OnListProductosListener() {
             @Override
-            public void onFinished(ArrayList<Producto> listaProductos) {
-                vista.success(listaProductos);
+            public void onFinished(ArrayList<Producto> productos) {
+                vista.success(productos);
             }
 
             @Override
@@ -28,6 +30,5 @@ public class ListaProductosPresenter implements ListaProductosContract.Presenter
                 vista.error("Error al traer los datos");
             }
         });
-
     }
 }

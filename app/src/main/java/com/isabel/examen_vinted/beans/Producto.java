@@ -1,39 +1,40 @@
 package com.isabel.examen_vinted.beans;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.util.ArrayList;
+import com.google.gson.annotations.SerializedName;
 
 public class Producto {
 
-    private static final String ID = "idProducto";
-    private static final String NOMBRE = "nombre";
-    private static final String PRECIO = "precio";
-    private static final String DESCRIPCION = "descripcion";
-    private static final String CATEGORIA = "idCategoria";
-    private static final String PUNTOS = "puntos";
-    private static final String URL = "url";
-
-    private int idProducto;
+    @SerializedName("id")
+    private long idProducto;
+    @SerializedName("nombre")
     private String nombre;
+    @SerializedName("descripcion")
     private String descripcion;
-    private String imagen;
-    private int precio;
-    private int idCategoria;
+    @SerializedName("precio")
+    private float precio;
+    @SerializedName("puntos")
     private int puntos;
+    @SerializedName("categoria")
+    private String categoria;
+    @SerializedName("url")
     private String url;
 
-    public Producto(){
 
+    private Usuario usuario;
+
+    public String getUsuario(){
+        return usuario.getNombre();
+    }
+    public void setUsuario(Usuario usuario){
+        this.usuario = usuario;
     }
 
-    public int getIdProducto() {
+
+    public long getIdProducto() {
         return idProducto;
     }
 
-    public void setIdProducto(int idProducto) {
+    public void setIdProducto(long idProducto) {
         this.idProducto = idProducto;
     }
 
@@ -53,28 +54,12 @@ public class Producto {
         this.descripcion = descripcion;
     }
 
-    public String getImagen() {
-        return imagen;
-    }
-
-    public void setImagen(String imagen) {
-        this.imagen = imagen;
-    }
-
-    public int getPrecio() {
+    public float getPrecio() {
         return precio;
     }
 
-    public void setPrecio(int precio) {
+    public void setPrecio(float precio) {
         this.precio = precio;
-    }
-
-    public int getIdCategoria() {
-        return idCategoria;
-    }
-
-    public void setIdCategoria(int idCategoria) {
-        this.idCategoria = idCategoria;
     }
 
     public int getPuntos() {
@@ -85,6 +70,14 @@ public class Producto {
         this.puntos = puntos;
     }
 
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
+    }
+
     public String getUrl() {
         return url;
     }
@@ -93,30 +86,14 @@ public class Producto {
         this.url = url;
     }
 
-    public static ArrayList<Producto> getArrayListFromJSon(JSONArray listaProductos){
-        ArrayList<Producto> lista = null;
-        try {
-            if(listaProductos!=null && listaProductos.length() > 0 ){
-                lista = new ArrayList<Producto>();
-            }
-            for (int i = 0; i < listaProductos.length(); i++) {
-                JSONObject json_data = listaProductos.getJSONObject(i);
-
-                Producto producto = new Producto();
-
-                producto.setIdProducto(json_data.getInt(ID));
-                producto.setNombre(json_data.getString(NOMBRE));
-                producto.setPrecio(json_data.getInt(PRECIO));
-                producto.setDescripcion(json_data.getString(DESCRIPCION));
-                producto.setIdCategoria(json_data.getInt(CATEGORIA));
-                producto.setPuntos(json_data.getInt(PUNTOS));
-                producto.setUrl(json_data.getString(URL));
-
-                lista.add(producto);
-            }
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-        return lista;
+    @Override
+    public String toString() {
+        return "Producto{" +
+                "id=" + idProducto +
+                ", nombre='" + nombre + '\'' +
+                ", descripcion='" + descripcion + '\'' +
+                ", precio='" + precio + '\'' +
+                ", categoria='" + categoria + '\'' +
+                '}';
     }
 }

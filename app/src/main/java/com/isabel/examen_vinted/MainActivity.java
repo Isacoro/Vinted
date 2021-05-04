@@ -6,10 +6,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
+import com.isabel.examen_vinted.productos.listaProductos.ListaProductosView;
 import com.isabel.examen_vinted.usuarios.login.LoginUsuarioView;
 
 public class MainActivity extends AppCompatActivity {
-    private static final int SCREEN = 1;
+    //private static final int SCREEN = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void run() {
                         Intent navegar = new Intent(
-                                getBaseContext(), LoginUsuarioView.class);
+                                getBaseContext(), ListaProductosView.class);
                         startActivity(navegar);
                     }
                 }

@@ -35,10 +35,10 @@ public class CategoriaProductoView extends AppCompatActivity implements Categori
         Intent navegar = this.getIntent();
         Bundle extra = navegar.getExtras();
 
-        String categoria = navegar.getStringExtra("CATEGORIA");
+        String categoria = navegar.getStringExtra("categoria");
 
         categoriaProductoPresenter = new CategoriaProductoPresenter(this);
-        categoriaProductoPresenter.getProductosCategoria(categoria);
+        categoriaProductoPresenter.getProductosCategoria(this, categoria);
 
         cargaSpinner();
     }
@@ -76,7 +76,7 @@ public class CategoriaProductoView extends AppCompatActivity implements Categori
                 if(categoria == "")
                     return;
 
-                navegar.putExtra("CATEGORIA", categoria);
+                navegar.putExtra("categoria", categoria);
                 startActivity(navegar);
                 }
 

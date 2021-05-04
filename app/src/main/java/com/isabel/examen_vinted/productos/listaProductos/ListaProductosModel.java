@@ -1,62 +1,41 @@
 package com.isabel.examen_vinted.productos.listaProductos;
 
-import android.os.AsyncTask;
-import android.util.Log;
+import android.content.Context;
+
 
 import com.isabel.examen_vinted.beans.Producto;
-import com.isabel.examen_vinted.utils.Post;
-
-import org.json.JSONArray;
+import com.isabel.examen_vinted.retrofit.ProductoApi;
 
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.List;
+import java.util.Set;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class ListaProductosModel implements ListaProductosContract.Model {
 
-    private ArrayList<Producto> listaProductos;
-    OnListProductosListener onListProductosListener;
-
 
     @Override
-    public void getProductosWS(OnListProductosListener onListProductosListener) {
-        this.onListProductosListener = onListProductosListener;
-        HashMap<String, String> param = new HashMap<>();
-        param.put("ACTION", "PRODUCTO.FIND_ALL");
+    public void getProductosWS(Context context, OnListProductosListener onListProductosListener) {
+        ProductoApi productoApi = new ProductoApi(context);
 
-        TareaSegundoPlano hilo = new TareaSegundoPlano(param);
-        hilo.execute("http://192.168.1.18:8090/Vinted_Isabel/Controller");
-    }
+        final Call<List<Producto>> request = productoApi.getProductos();
 
-    class TareaSegundoPlano extends AsyncTask<String, Integer, Boolean> {
-        private HashMap<String, String> parametros = null;
-
-        public TareaSegundoPlano( HashMap<String, String> parametros) {
-            super();
-            this.parametros = parametros;
-        }
-
-        @Override
-        protected Boolean  doInBackground(String... params) {
-            String url_select = params[0];
-            try {
-                Post post = new Post();
-                JSONArray result = post.getServerDataPost(parametros,url_select);
-                listaProductos = Producto.getArrayListFromJSon(result);
-            }catch (Exception e) {
-                Log.e("log_tag", "Error in http connection " + e.toString());
-            }
-            return true;
-        }
-
-        @Override
-        protected void onPostExecute(Boolean resp) {
-            try {
-                if(resp){
-                    onListProductosListener.onFinished(listaProductos);
+        request.enqueue(new Callback<List<Producto>>() {
+            @Override
+            public void onResponse(Call<List<Producto>> call, Response<List<Producto>> response) {
+                if (response != null && response.body() != null) {
+                    onListProductosListener.onFinished(new ArrayList<Producto>(response.body()));
                 }
-            }catch (Exception e) {
-                onListProductosListener.onFailure("Fallo al traer los productos");
             }
-        }
+
+            @Override
+            public void onFailure(Call<List<Producto>> call, Throwable t) {
+                    t.printStackTrace();
+                    onListProductosListener.onFailure(t.getLocalizedMessage());
+            }
+        });
     }
 }

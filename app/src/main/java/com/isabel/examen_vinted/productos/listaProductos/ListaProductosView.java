@@ -38,7 +38,7 @@ public class ListaProductosView extends AppCompatActivity implements ListaProduc
         setContentView(R.layout.activity_lista_productos_view);
 
         listaProductosPresenter = new ListaProductosPresenter(this);
-        listaProductosPresenter.getProductos();
+        listaProductosPresenter.getProductos(this);
 
         btTop = findViewById(R.id.btTop);
         btTopUsuarios = findViewById(R.id.btTopUsuarios);
