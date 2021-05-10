@@ -1,3 +1,18 @@
 <resources>
-    <string name="app_name">Examen_Vinted</string>
+    <string name="app_name">Vinted</string>
+    <string name="activity_login_email">Email</string>
+    <string name="activity_login_button_registro">Registrar</string>
+    <string name="activity_login_button_inicio_sesion">Iniciar sesión</string>
+    <string name="activity_registro_title">Formulario de Registro</string>
+    <string name="activity_registro_nombre">Nombre</string>
+    <string name="activity_registro_email">Email</string>
+    <string name="activity_registro_password">Password</string>
+    <string name="activity_registro_aceptar">Aceptar</string>
+    <string name="activity_list_spinner">Elige categoría</string>
+    <string name="activity_list_top_productos">Top 10 de productos</string>
+    <string name="activity_list_top_usuarios">Top 10 Usuarios</string>
+    <string name="menu_inicio">Inicio</string>
+    <string name="menu_top_productos">Top Productos</string>
+    <string name="menu_top_usuarios">Top Usuarios</string>
+    <string name="menu_mi_cuenta">Mi cuenta</string>
 </resources>

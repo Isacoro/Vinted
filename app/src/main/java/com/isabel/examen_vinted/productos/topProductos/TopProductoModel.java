@@ -1,11 +1,7 @@
 package com.isabel.examen_vinted.productos.topProductos;
 
-import android.os.AsyncTask;
 
 import com.isabel.examen_vinted.beans.Producto;
-import com.isabel.examen_vinted.utils.Post;
-
-import org.json.JSONArray;
 
 import java.util.ArrayList;
 import java.util.HashMap;

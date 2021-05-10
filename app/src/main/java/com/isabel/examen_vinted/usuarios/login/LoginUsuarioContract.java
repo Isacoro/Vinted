@@ -1,5 +1,7 @@
 package com.isabel.examen_vinted.usuarios.login;
 
+import android.content.Context;
+
 import com.isabel.examen_vinted.beans.Usuario;
 
 import java.util.ArrayList;
@@ -12,11 +14,11 @@ public interface LoginUsuarioContract {
     }
 
     interface Presenter{
-        void getUsuario(Usuario usuario);
+        void getUsuarioLogin(Context context, String email, String password);
     }
 
     interface Model{
-        void getUsuarioWS(OnLoginUsuarioListener onLoginUsuarioListener, Usuario usuario);
+        void getUsuarioWS(Context context, OnLoginUsuarioListener onLoginUsuarioListener, String email, String password);
 
         interface OnLoginUsuarioListener{
             void onFinished(Usuario usuario);

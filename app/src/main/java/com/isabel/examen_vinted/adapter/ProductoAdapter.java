@@ -30,7 +30,6 @@ public class ProductoAdapter extends RecyclerView.Adapter<ProductoAdapter.Produc
         public TextView nombre;
         public TextView descripcion;
         public TextView precio;
-        public TextView puntos;
 
         public ProductoViewHolder(@NonNull View view) {
             super(view);
@@ -39,7 +38,6 @@ public class ProductoAdapter extends RecyclerView.Adapter<ProductoAdapter.Produc
             nombre = view.findViewById(R.id.txtNombre);
             descripcion = view.findViewById(R.id.txtDescripcion);
             precio = view.findViewById(R.id.txtPrecio);
-            puntos = view.findViewById(R.id.txtPuntos);
         }
     }
 
@@ -59,7 +57,6 @@ public class ProductoAdapter extends RecyclerView.Adapter<ProductoAdapter.Produc
 
         holder.nombre.setText(producto.getNombre());
         holder.precio.setText(producto.getPrecio() + "€");
-        holder.puntos.setText(producto.getPuntos() + " puntos");
         Picasso.get().load(producto.getUrl()).fit().centerCrop().into(holder.url);
 
 

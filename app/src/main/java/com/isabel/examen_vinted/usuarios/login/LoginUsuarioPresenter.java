@@ -1,5 +1,7 @@
 package com.isabel.examen_vinted.usuarios.login;
 
+import android.content.Context;
+
 import com.isabel.examen_vinted.beans.Usuario;
 import com.isabel.examen_vinted.usuarios.login.LoginUsuarioContract;
 import com.isabel.examen_vinted.usuarios.login.LoginUsuarioModel;
@@ -18,8 +20,8 @@ public class LoginUsuarioPresenter implements LoginUsuarioContract.Presenter {
 
 
     @Override
-    public void getUsuario(Usuario usuario) {
-        loginUsuarioModel.getUsuarioWS(new LoginUsuarioContract.Model.OnLoginUsuarioListener() {
+    public void getUsuarioLogin(Context context, String email, String password) {
+        loginUsuarioModel.getUsuarioWS(context, new LoginUsuarioContract.Model.OnLoginUsuarioListener() {
             @Override
             public void onFinished(Usuario usuario) {
                 vista.successLogin(usuario);
@@ -27,10 +29,8 @@ public class LoginUsuarioPresenter implements LoginUsuarioContract.Presenter {
 
             @Override
             public void onFailure(String error) {
-                vista.error(error);
-
+                vista.error("Error de login");
             }
-        }, usuario);
-
+         },email, password);
     }
 }

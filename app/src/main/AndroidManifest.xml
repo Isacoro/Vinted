@@ -12,19 +12,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Examen_Vinted"
         android:usesCleartextTraffic="true">
-        <activity android:name=".usuarios.topUsuarios.TopUsuariosView"></activity>
-        <activity android:name=".productos.topProductos.TopProductoView" />
-        <activity android:name=".productos.categoriaProductos.CategoriaProductoView" />
-        <activity android:name=".productos.listaProductos.DetalleProductosView" />
-        <activity android:name=".productos.listaProductos.ListaProductosView" />
-        <activity android:name=".usuarios.login.LoginUsuarioView" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".splashScreen.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".usuarios.registro.RegistroUsuarioView" />
+<!--        <activity android:name=".usuarios.topUsuarios.TopUsuariosView" />-->
+<!--        <activity android:name=".productos.topProductos.TopProductoView" />-->
+        <activity android:name=".productos.categoriaProductos.CategoriaProductoView" />
+        <activity android:name=".productos.listaProductos.DetalleProductosView" />
+<!--        <activity android:name=".productos.listaProductos.ListaProductosView" />-->
+<!--        <activity android:name=".usuarios.login.LoginUsuarioView" />-->
+        <activity android:name=".MainActivity">
+        </activity>
     </application>
-
 </manifest>

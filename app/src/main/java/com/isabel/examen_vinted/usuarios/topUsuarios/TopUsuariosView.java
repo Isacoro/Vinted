@@ -25,8 +25,8 @@ public class TopUsuariosView extends AppCompatActivity implements TopUsuariosCon
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_top_usuario_view);
 
-        topUsuariosPresenter = new TopUsuariosPresenter(this);
-        topUsuariosPresenter.getUsuariosTop();
+//        topUsuariosPresenter = new TopUsuariosPresenter(this);
+//        topUsuariosPresenter.getUsuariosTop();
     }
 
     @Override

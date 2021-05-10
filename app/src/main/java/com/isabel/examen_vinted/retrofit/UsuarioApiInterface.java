@@ -6,8 +6,10 @@ import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
+import retrofit2.http.Field;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.Query;
 
 public interface UsuarioApiInterface {
 
@@ -17,11 +19,14 @@ public interface UsuarioApiInterface {
 
     //Registrar usuario
     @POST("usuarios")
-    Call<Usuario> saveUsuario(@Body Usuario usuario);
+    Call<Usuario> saveUsuario(@Field("nombre") String nombre,
+                              @Field("email") String email,
+                              @Field("password") String password);
 
     //Login usuario
     @GET("usuarios/email-password")
-    Call<Usuario> getUsuarioLogin(String email, String password);
+    Call<Usuario> getUsuarioLogin(@Query("email") String email,
+                                  @Query("password") String password);
 
     //Top usuarios
     @GET("usuarios/top")

@@ -1,5 +1,7 @@
 package com.isabel.examen_vinted.usuarios.topUsuarios;
 
+import android.content.Context;
+
 import com.isabel.examen_vinted.beans.Producto;
 import com.isabel.examen_vinted.beans.Usuario;
 import com.isabel.examen_vinted.productos.topProductos.TopProductoContract;
@@ -14,11 +16,11 @@ public interface TopUsuariosContract {
     }
 
     interface Presenter{
-        void getUsuariosTop();
+        void getUsuariosTop(Context context);
     }
 
     interface Model{
-        void getUsuariosTopWS(OnListaUsuariosTopListener onListaUsuariosTopListener);
+        void getUsuariosTopWS(Context context, OnListaUsuariosTopListener onListaUsuariosTopListener);
 
         interface OnListaUsuariosTopListener{
             void onFinished(ArrayList<Usuario> usuarios);

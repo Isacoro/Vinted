@@ -8,7 +8,6 @@ import com.isabel.examen_vinted.retrofit.ProductoApi;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
 import retrofit2.Call;
 import retrofit2.Callback;

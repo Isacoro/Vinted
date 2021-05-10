@@ -11,48 +11,55 @@ import android.widget.Toast;
 
 import com.isabel.examen_vinted.R;
 import com.isabel.examen_vinted.beans.Usuario;
-import com.isabel.examen_vinted.productos.listaProductos.ListaProductosView;
+import com.isabel.examen_vinted.productos.listaProductos.ListaProductosFragment;
+import com.isabel.examen_vinted.usuarios.registro.RegistroUsuarioView;
 
 
 public class LoginUsuarioView extends AppCompatActivity implements LoginUsuarioContract.View {
 
-    private EditText nombre, password;
-    private Button login;
+    private EditText email, password;
+    private Button login, registro;
     private LoginUsuarioPresenter loginUsuarioPresenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_usuario_view);
+
         loginUsuarioPresenter = new LoginUsuarioPresenter(this);
 
         initComponents();
 
-        login.setOnClickListener(new View.OnClickListener(){
+        login.setOnClickListener(v -> {
+            Usuario usuario = new Usuario();
 
-            @Override
-            public void onClick(View v) {
-                Usuario usuario = new Usuario();
+            usuario.setEmail(email.getText().toString());
+            usuario.setPassword(password.getText().toString());
 
-                usuario.setNombre(nombre.getText().toString());
-                usuario.setPassword(password.getText().toString());
+          //  loginUsuarioPresenter.getUsuarioLogin();
 
-                loginUsuarioPresenter.getUsuario(usuario);
-            }
+        });
+
+        registro.setOnClickListener(v -> {
+            Intent navegar = new Intent(getBaseContext(), RegistroUsuarioView.class);
+            startActivity(navegar);
         });
     }
 
     private void initComponents(){
-        nombre = findViewById(R.id.etNombre);
-        password = findViewById(R.id.etPassword);
+        email = findViewById(R.id.edtEmail);
+        password = findViewById(R.id.edtPassword);
         login = findViewById(R.id.btLogin);
+        registro = findViewById(R.id.btRegistro);
     }
 
 
     @Override
     public void successLogin(Usuario usuario) {
-        Intent navegar = new Intent(getBaseContext(), ListaProductosView.class);
+        Intent navegar = new Intent(getBaseContext(), ListaProductosFragment.class);
         startActivity(navegar);
+
+        Toast.makeText(this, "Bienvenido " + usuario.getNombre(), Toast.LENGTH_SHORT).show();
     }
 
     @Override

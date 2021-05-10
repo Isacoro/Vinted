@@ -1,0 +1,23 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menu_nav1"
+        android:enabled="true"
+        android:icon="@drawable/home"
+        android:title="@string/menu_inicio"/>
+    <item
+        android:id="@+id/menu_nav2"
+        android:enabled="true"
+        android:icon="@drawable/top_productos"
+        android:title="@string/menu_top_productos"/>
+    <item
+        android:id="@+id/menu_nav3"
+        android:enabled="true"
+        android:icon="@drawable/top_ventas"
+        android:title="@string/menu_top_usuarios"/>
+    <item
+        android:id="@+id/menu_nav4"
+        android:enabled="true"
+        android:icon="@drawable/mi_cuenta"
+        android:title="@string/menu_mi_cuenta"/>
+</menu>

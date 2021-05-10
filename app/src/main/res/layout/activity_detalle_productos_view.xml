@@ -28,7 +28,7 @@
         android:text="Precio: "
         android:textSize="20sp"
         android:textStyle="bold"
-        android:textColor="@color/black"
+        android:textColor="@color/colorBlack"
         />
 
     <TextView
@@ -41,7 +41,7 @@
         android:text="Nombre: "
         android:textSize="20sp"
         android:textStyle="bold"
-        android:textColor="@color/black"/>
+        android:textColor="@color/colorBlack"/>
 
     <TextView
         android:id="@+id/txtDescripcion"
@@ -51,6 +51,6 @@
         android:layout_weight="10"
         android:text="Descripción: "
         android:textSize="20sp"
-        android:textColor="@color/black"/>
+        android:textColor="@color/colorBlack"/>
 
 </LinearLayout>

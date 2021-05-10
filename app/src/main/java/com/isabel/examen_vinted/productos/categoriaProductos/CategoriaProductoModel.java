@@ -1,19 +1,10 @@
 package com.isabel.examen_vinted.productos.categoriaProductos;
 
 import android.content.Context;
-import android.os.AsyncTask;
-
 import androidx.annotation.Nullable;
-
 import com.isabel.examen_vinted.beans.Producto;
 import com.isabel.examen_vinted.retrofit.ProductoApi;
-import com.isabel.examen_vinted.utils.Post;
-
-import org.json.JSONArray;
-
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 import retrofit2.Call;
