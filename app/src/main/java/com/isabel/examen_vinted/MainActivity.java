@@ -2,8 +2,10 @@ package com.isabel.examen_vinted;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 
+import com.isabel.examen_vinted.productos.categoriaProductos.CategoriaProductoView;
 import com.isabel.examen_vinted.productos.listaProductos.ListaProductosContract;
 import com.isabel.examen_vinted.productos.listaProductos.ListaProductosFragment;
 
@@ -15,7 +17,14 @@ import androidx.recyclerview.widget.RecyclerView;
 
 
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
+import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
+import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.isabel.examen_vinted.beans.Producto;
@@ -35,17 +44,18 @@ public class MainActivity extends AppCompatActivity implements ListaProductosCon
     private RelativeLayout relativeLayout;
     private BottomNavigationView bottomNavigationView;
 
-
+//
 //    private Spinner spinner;
-//    private String[] elegir = {"", "Mujer", "Hombre", "Niños"};
+//    private String[] elegir;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-//        listaProductosPresenter = new ListaProductosPresenter(this);
-//        listaProductosPresenter.getProductos(this);
+
+        listaProductosPresenter = new ListaProductosPresenter(this);
+        listaProductosPresenter.getProductos(this);
 
         initComponents();
 
@@ -55,13 +65,13 @@ public class MainActivity extends AppCompatActivity implements ListaProductosCon
         fragmentManager = getSupportFragmentManager();
 
         showFragmentInicio();
-//        cargaSpinner();
     }
 
 
     private void initComponents(){
         relativeLayout = findViewById(R.id.layout_principal);
         bottomNavigationView = findViewById(R.id.menu_navigation);
+//        spinner = findViewById(R.id.categoriaTextView);
     }
 
 
@@ -138,11 +148,10 @@ public class MainActivity extends AppCompatActivity implements ListaProductosCon
     public void error(String message) {
         System.out.println(message);
 
-//        Toast.makeText(this, "error", Toast.LENGTH_SHORT).show();
     }
 
 //    private void cargaSpinner() {
-//        final AutoCompleteTextView spinner = findViewById(R.id.spinnerFiltro);
+//        final AutoCompleteTextView spinner = findViewById(R.id.categoriaTextView);
 //
 //        ArrayAdapter arrayAdapter = new ArrayAdapter(this, R.layout.layout_spinner, elegir);
 //        spinner.setAdapter(arrayAdapter);

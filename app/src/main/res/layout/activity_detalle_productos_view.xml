@@ -5,8 +5,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:scrollbarTrackVertical="@drawable/back"
     android:weightSum="100"
     tools:context=".productos.listaProductos.DetalleProductosView">
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/activityBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_gravity="left"
+        android:layout_margin="@dimen/padding_general"
+        android:layout_marginRight="10dp"
+        android:backgroundTint="#FFFFFF"
+        app:srcCompat="@drawable/back"
+        app:tint="@color/colorPrimaryLight"/>
 
     <ImageView
         android:id="@+id/imgImagen"
@@ -26,10 +40,9 @@
         android:layout_margin="10dp"
         android:layout_weight="10"
         android:text="Precio: "
-        android:textSize="20sp"
-        android:textStyle="bold"
         android:textColor="@color/colorBlack"
-        />
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/txtNombre"
@@ -39,9 +52,9 @@
         android:layout_margin="10dp"
         android:layout_weight="10"
         android:text="Nombre: "
+        android:textColor="@color/colorBlack"
         android:textSize="20sp"
-        android:textStyle="bold"
-        android:textColor="@color/colorBlack"/>
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/txtDescripcion"
@@ -50,7 +63,21 @@
         android:layout_margin="10dp"
         android:layout_weight="10"
         android:text="Descripción: "
-        android:textSize="20sp"
-        android:textColor="@color/colorBlack"/>
+        android:textColor="@color/colorBlack"
+        android:textSize="20sp" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/activityFavorite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_gravity="end"
+        android:layout_margin="@dimen/padding_general"
+        android:layout_marginRight="10dp"
+        android:backgroundTint="@color/colorPrimaryLight"
+        app:srcCompat="@drawable/favorito"
+        app:tint="@color/colorWhite" />
+
 
 </LinearLayout>
