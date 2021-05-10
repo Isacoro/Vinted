@@ -30,5 +30,5 @@ public interface UsuarioApiInterface {
 
     //Top usuarios
     @GET("usuarios/top")
-    Call<Usuario> getUsuariosTop();
+    Call<List<Usuario>> getUsuariosTop();
 }

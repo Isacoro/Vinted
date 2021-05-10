@@ -69,7 +69,7 @@ public class ApiClient {
     }
 
     //Usuarios top
-    public Call<Usuario> getUsuariosTop(){
+    public Call<List<Usuario>> getUsuariosTop(){
         UsuarioApiInterface service = retrofit.create(UsuarioApiInterface.class);
         return  service.getUsuariosTop();
     }

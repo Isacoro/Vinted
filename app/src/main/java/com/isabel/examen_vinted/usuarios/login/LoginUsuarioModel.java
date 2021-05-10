@@ -1,15 +1,9 @@
 package com.isabel.examen_vinted.usuarios.login;
 
 import android.content.Context;
-import android.os.Build;
-
-import androidx.annotation.RequiresApi;
 
 import com.isabel.examen_vinted.beans.Usuario;
 import com.isabel.examen_vinted.retrofit.ApiClient;
-import com.isabel.examen_vinted.retrofit.UsuarioApi;
-
-import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;

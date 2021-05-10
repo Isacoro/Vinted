@@ -3,12 +3,6 @@ package com.isabel.examen_vinted.usuarios.registro;
 import android.content.Context;
 
 import com.isabel.examen_vinted.beans.Usuario;
-import com.isabel.examen_vinted.retrofit.ApiClient;
-import com.isabel.examen_vinted.retrofit.UsuarioApi;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class RegistroUsuarioModel implements RegistroUsuarioContract.Model{
     @Override

@@ -27,7 +27,7 @@ public class ListaProductosPresenter implements ListaProductosContract.Presenter
 
             @Override
             public void onFailure(String error) {
-                vista.error("Error al traer los datos");
+                vista.error(error);
             }
         });
     }

@@ -3,7 +3,8 @@ package com.isabel.examen_vinted.productos.categoriaProductos;
 import android.content.Context;
 import androidx.annotation.Nullable;
 import com.isabel.examen_vinted.beans.Producto;
-import com.isabel.examen_vinted.retrofit.ProductoApi;
+import com.isabel.examen_vinted.retrofit.ApiClient;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,9 +16,9 @@ public class CategoriaProductoModel implements CategoriaProductoContract.Model {
 
     @Override
     public void getCategoriaProductosWS(Context context, OnCategoriaProductoListener onCategoriaProductoListener, String categoria) {
-        ProductoApi productoApi = new ProductoApi(context);
+        ApiClient apiClient = new ApiClient(context);
 
-        final Call<List<Producto>> request = productoApi.getProductosCategoria(categoria);
+        final Call<List<Producto>> request = apiClient.getProductosCategoria(categoria);
 
         request.enqueue(new Callback<List<Producto>>() {
             @Override

@@ -20,12 +20,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".usuarios.registro.RegistroUsuarioView" />
-<!--        <activity android:name=".usuarios.topUsuarios.TopUsuariosView" />-->
-<!--        <activity android:name=".productos.topProductos.TopProductoView" />-->
         <activity android:name=".productos.categoriaProductos.CategoriaProductoView" />
         <activity android:name=".productos.listaProductos.DetalleProductosView" />
-<!--        <activity android:name=".productos.listaProductos.ListaProductosView" />-->
-<!--        <activity android:name=".usuarios.login.LoginUsuarioView" />-->
         <activity android:name=".MainActivity">
         </activity>
     </application>

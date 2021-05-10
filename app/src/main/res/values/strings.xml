@@ -15,4 +15,7 @@
     <string name="menu_top_productos">Top Productos</string>
     <string name="menu_top_usuarios">Top Usuarios</string>
     <string name="menu_mi_cuenta">Mi cuenta</string>
+    <string name="usuarios_ventas">Ventas:</string>
+    <string name="usuario_top_nombre">Nombre</string>
+    <string name="usuario_top_ciudad">Ciudad</string>
 </resources>

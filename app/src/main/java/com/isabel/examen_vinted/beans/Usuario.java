@@ -100,6 +100,7 @@ public class Usuario {
                 ", ciudad='" + ciudad + '\'' +
                 ", password='" + password + '\'' +
                 ", email='" + email + '\'' +
+                ", ventas='" + ventas + '\'' +
                 '}';
     }
 }

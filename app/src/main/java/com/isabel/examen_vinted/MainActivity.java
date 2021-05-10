@@ -44,7 +44,6 @@ public class MainActivity extends AppCompatActivity implements ListaProductosCon
     private RelativeLayout relativeLayout;
     private BottomNavigationView bottomNavigationView;
 
-//
 //    private Spinner spinner;
 //    private String[] elegir;
 
@@ -64,7 +63,7 @@ public class MainActivity extends AppCompatActivity implements ListaProductosCon
 
         fragmentManager = getSupportFragmentManager();
 
-        showFragmentInicio();
+        fragmentInicio();
     }
 
 
@@ -76,60 +75,58 @@ public class MainActivity extends AppCompatActivity implements ListaProductosCon
 
 
     private void inicioBottomNavigation(){
-        bottomNavigationView.setOnNavigationItemReselectedListener(new BottomNavigationView.OnNavigationItemReselectedListener() {
-            @Override
-            public void onNavigationItemReselected(@NonNull MenuItem item) {
+        bottomNavigationView.setOnNavigationItemReselectedListener((item) -> {
 
-                switch(item.getItemId()){
+            switch(item.getItemId()){
 
-                    case R.id.menu_nav1:
-                        showFragmentInicio();
-                        return;
+                case R.id.menu_nav1:
+                    fragmentInicio();
+                    break;
 
-                    case R.id.menu_nav2:
-                        showFragmentProductosTop();
-                        return;
+                case R.id.menu_nav2:
+                    fragmentProductosTop();
+                    break;
 
-//                    case R.id.menu_nav3:
-//                        showFragmentUsuariosTop();
-//                        return;
+                case R.id.menu_nav3:
+                    fragmentUsuariosTop();
+                    break;
 //
 //                    case R.id.menu_nav4:
 //                        showFragmentCuenta();
-//                        return;
-                }
-                return;
+//                        break;
             }
+
+            return;
         });
     }
 
-    private void showFragmentInicio(){
+    private void fragmentInicio(){
         FragmentTransaction transaction = fragmentManager.beginTransaction();
         ListaProductosFragment listaProductosFragment = new ListaProductosFragment();
         transaction.replace(R.id.layout_fragment, listaProductosFragment);
-        transaction.addToBackStack(null);
+//        transaction.addToBackStack(null);
         transaction.commit();
     }
 
-    private void showFragmentProductosTop(){
+    private void fragmentProductosTop(){
         FragmentTransaction transaction = fragmentManager.beginTransaction();
         TopProductoFragment topProductoFragment = new TopProductoFragment();
         transaction.replace(R.id.layout_fragment, topProductoFragment);
-        transaction.addToBackStack(null);
+//        transaction.addToBackStack(null);
         transaction.commit();
 
     }
 
-//    private void showFragmentUsuariosTop(){
-//        FragmentTransaction transaction = fragmentManager.beginTransaction();
-//        TopUsuarioFragment topUsuarioFragment = new TopUsuarioFragment();
-//        transaction.replace(R.id.layout_fragment, topUsuarioFragment);
+    private void fragmentUsuariosTop(){
+        FragmentTransaction transaction = fragmentManager.beginTransaction();
+        TopUsuarioFragment topUsuarioFragment = new TopUsuarioFragment();
+        transaction.replace(R.id.layout_fragment, topUsuarioFragment);
 //        transaction.addToBackStack(null);
-//        transaction.commit();
+        transaction.commit();
+
+    }
 //
-//    }
-//
-//    private void showFragmentCuenta(){
+//    private void fragmentCuenta(){
 //        FragmentTransaction transaction = fragmentManager.beginTransaction();
 //        LoginUsuarioFragment loginUsuarioFragment = new LoginUsuarioFragment();
 //        transaction.replace(R.id.layout_fragment, loginUsuarioFragment);

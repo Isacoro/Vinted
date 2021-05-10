@@ -4,7 +4,7 @@ import android.content.Context;
 
 
 import com.isabel.examen_vinted.beans.Producto;
-import com.isabel.examen_vinted.retrofit.ProductoApi;
+import com.isabel.examen_vinted.retrofit.ApiClient;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,23 +18,42 @@ public class ListaProductosModel implements ListaProductosContract.Model {
 
     @Override
     public void getProductosWS(Context context, OnListProductosListener onListProductosListener) {
-        ProductoApi productoApi = new ProductoApi(context);
-
-        final Call<List<Producto>> request = productoApi.getProductos();
+        ApiClient apiClient = new ApiClient(context);
+        final Call<List<Producto>> request = apiClient.getProductos();
 
         request.enqueue(new Callback<List<Producto>>() {
             @Override
             public void onResponse(Call<List<Producto>> call, Response<List<Producto>> response) {
                 if (response != null && response.body() != null) {
-                    onListProductosListener.onFinished(new ArrayList<Producto>(response.body()));
+                    onListProductosListener.onFinished(new ArrayList<>(response.body()));
                 }
             }
 
             @Override
             public void onFailure(Call<List<Producto>> call, Throwable t) {
-                    t.printStackTrace();
-                    onListProductosListener.onFailure(t.getLocalizedMessage());
+                t.printStackTrace();
+                onListProductosListener.onFailure(t.getLocalizedMessage());
             }
         });
+
+//        ProductoApi productoApi = new ProductoApi(context);
+//
+//        final Call<List<Producto>> request = productoApi.getProductos();
+//
+//        request.enqueue(new Callback<List<Producto>>() {
+//            @Override
+//            public void onResponse(Call<List<Producto>> call, Response<List<Producto>> response) {
+//                if (response != null && response.body() != null) {
+//                    onListProductosListener.onFinished(new ArrayList<>(response.body()));
+//                }
+//            }
+//
+//            @Override
+//            public void onFailure(Call<List<Producto>> call, Throwable t) {
+//                    t.printStackTrace();
+//                    onListProductosListener.onFailure(t.getLocalizedMessage());
+//            }
+//        });
+//    }
     }
 }

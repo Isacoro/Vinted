@@ -12,10 +12,10 @@
         android:padding="3dp"
         android:scrollbars="vertical"/>
 
-    <ProgressBar
-        android:id="@+id/activity_ProgressBar"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_centerInParent="true"
-        android:layout_gravity="center"/>
+<!--    <ProgressBar-->
+<!--        android:id="@+id/activity_ProgressBar"-->
+<!--        android:layout_width="80dp"-->
+<!--        android:layout_height="80dp"-->
+<!--        android:layout_centerInParent="true"-->
+<!--        android:layout_gravity="center"/>-->
 </RelativeLayout>

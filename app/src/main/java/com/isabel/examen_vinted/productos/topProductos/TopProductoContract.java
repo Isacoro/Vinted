@@ -1,5 +1,7 @@
 package com.isabel.examen_vinted.productos.topProductos;
 
+import android.content.Context;
+
 import com.isabel.examen_vinted.beans.Producto;
 
 import java.util.ArrayList;
@@ -12,11 +14,11 @@ public interface TopProductoContract {
     }
 
     interface Presenter{
-        void getProductosTop();
+        void getProductosTop(Context context);
     }
 
     interface Model{
-        void getProductosTopWS(OnListaProductosTopListener onListaProductosTopListener);
+        void getProductosTopWS(Context context, OnListaProductosTopListener onListaProductosTopListener);
 
         interface OnListaProductosTopListener{
             void onFinished(ArrayList<Producto> productos);

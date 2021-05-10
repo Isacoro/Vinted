@@ -1,5 +1,7 @@
 package com.isabel.examen_vinted.productos.topProductos;
 
+import android.content.Context;
+
 import com.isabel.examen_vinted.beans.Producto;
 import com.isabel.examen_vinted.productos.listaProductos.ListaProductosContract;
 
@@ -16,8 +18,8 @@ public class TopProductoPresenter implements TopProductoContract.Presenter {
     }
 
     @Override
-    public void getProductosTop() {
-        topProductoModel.getProductosTopWS(new TopProductoContract.Model.OnListaProductosTopListener() {
+    public void getProductosTop(Context context) {
+        topProductoModel.getProductosTopWS(context, new TopProductoContract.Model.OnListaProductosTopListener() {
             @Override
             public void onFinished(ArrayList<Producto> productos) {
                 vista.success(productos);

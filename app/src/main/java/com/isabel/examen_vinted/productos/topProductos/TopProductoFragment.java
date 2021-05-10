@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -25,8 +26,9 @@ public class TopProductoFragment extends Fragment implements TopProductoContract
         View view = layoutInflater.inflate(R.layout.fragment_listado_productos_top, viewGroup, false);
 
         initComponents(view);
+
         topProductoPresenter = new TopProductoPresenter(this);
-        topProductoPresenter.getProductosTop();
+        topProductoPresenter.getProductosTop(getContext());
 
         return view;
     }
@@ -39,7 +41,7 @@ public class TopProductoFragment extends Fragment implements TopProductoContract
     public void success(ArrayList<Producto> productos) {
         recycler.setHasFixedSize(true);
 
-        layoutManager = new LinearLayoutManager(getContext());
+        layoutManager = new GridLayoutManager(getContext(), 2);
         recycler.setLayoutManager(layoutManager);
 
         ProductoAdapter adapter = new ProductoAdapter(productos);
