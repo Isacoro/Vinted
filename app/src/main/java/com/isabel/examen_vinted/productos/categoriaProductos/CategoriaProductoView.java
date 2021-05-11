@@ -1,6 +1,7 @@
 package com.isabel.examen_vinted.productos.categoriaProductos;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -49,7 +50,7 @@ public class CategoriaProductoView extends AppCompatActivity implements Categori
         recycler = findViewById(R.id.recycler);
         recycler.setHasFixedSize(true);
 
-        layoutManager = new LinearLayoutManager(this);
+        layoutManager = new GridLayoutManager(this, 2);
         recycler.setLayoutManager(layoutManager);
 
         ProductoAdapter adapter = new ProductoAdapter(listaProductosCategoria);

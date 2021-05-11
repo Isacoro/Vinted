@@ -28,7 +28,7 @@
         android:layout_height="224dp"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
-        android:layout_marginBottom="70dp"
+        android:layout_marginBottom="10dp"
         android:layout_weight="20"
         android:scaleType="fitXY" />
 
@@ -65,6 +65,16 @@
         android:text="Descripción: "
         android:textColor="@color/colorBlack"
         android:textSize="20sp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btComprar"
+        android:textColor="@color/colorWhite"
+        android:text="COMPRAR"
+        android:layout_gravity="center"
+        android:textStyle="bold"
+        />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/activityFavorite"

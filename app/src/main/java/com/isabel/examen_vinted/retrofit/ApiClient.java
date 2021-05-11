@@ -57,9 +57,9 @@ public class ApiClient {
     }
 
     //Registro usuario
-    public Call<Usuario> saveUsuarios(String nombre, String email, String password){
+    public Call<Usuario> saveUsuarios(Usuario usuario){
         UsuarioApiInterface service = retrofit.create(UsuarioApiInterface.class);
-        return service.saveUsuario(nombre, email, password);
+        return service.saveUsuario(usuario);
     }
 
     //Login usuario

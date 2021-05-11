@@ -19,6 +19,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".usuarios.login.LoginUsuarioView"/>
         <activity android:name=".usuarios.registro.RegistroUsuarioView" />
         <activity android:name=".productos.categoriaProductos.CategoriaProductoView" />
         <activity android:name=".productos.listaProductos.DetalleProductosView" />

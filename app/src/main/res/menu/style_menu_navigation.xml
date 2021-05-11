@@ -15,9 +15,4 @@
         android:enabled="true"
         android:icon="@drawable/top_ventas"
         android:title="@string/menu_top_usuarios"/>
-    <item
-        android:id="@+id/menu_nav4"
-        android:enabled="true"
-        android:icon="@drawable/mi_cuenta"
-        android:title="@string/menu_mi_cuenta"/>
 </menu>

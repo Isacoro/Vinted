@@ -19,9 +19,7 @@ public interface UsuarioApiInterface {
 
     //Registrar usuario
     @POST("usuarios")
-    Call<Usuario> saveUsuario(@Field("nombre") String nombre,
-                              @Field("email") String email,
-                              @Field("password") String password);
+    Call<Usuario> saveUsuario(@Body Usuario usuario);
 
     //Login usuario
     @GET("usuarios/email-password")

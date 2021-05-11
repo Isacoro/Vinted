@@ -21,7 +21,6 @@ public class LoginUsuarioModel implements LoginUsuarioContract.Model {
 
         request.enqueue(new Callback<Usuario>() {
 
-           // @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public void onResponse(Call<Usuario> call, Response<Usuario> response) {
                 if(response != null && response.body() != null){

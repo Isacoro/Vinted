@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public interface LoginUsuarioContract {
 
     interface View{
-        void successLogin(Usuario usuario);
+        void successLogin(Usuario loginUsuario);
         void error(String message);
     }
 

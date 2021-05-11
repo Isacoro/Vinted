@@ -29,7 +29,7 @@ public class LoginUsuarioPresenter implements LoginUsuarioContract.Presenter {
 
             @Override
             public void onFailure(String error) {
-                vista.error("Error de login");
+                vista.error(error);
             }
          },email, password);
     }

@@ -6,31 +6,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:layout_margin="@dimen/padding_general"
     android:id="@+id/layout_principal"
     tools:context=".MainActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/elegir_categoria">
+        android:id="@+id/elegir_categoria"
+        android:background="@color/colorPrimary">
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/idCategoria"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-            android:layout_width="match_parent"
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="@string/activity_list_spinner">
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <androidx.appcompat.widget.AppCompatAutoCompleteTextView
-            android:id="@+id/categoriaTextView"
-            android:layout_width="match_parent"
-            android:layout_height="37dp"
-            android:background="@color/colorPrimary"
-            android:clickable="true"
-            android:textColor="@color/colorWhite" />
+            android:textColor="@color/colorWhite"
+            android:text="@string/activity_list_spinner"
+            android:textSize="20dp"/>
+        <Spinner
+            android:id="@+id/spinnerFiltro"
+            android:layout_alignParentEnd="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="13dp"/>
     </RelativeLayout>
 
 
@@ -41,8 +37,7 @@
         android:layout_height="match_parent"
         android:layout_below="@+id/elegir_categoria"
         android:layout_above="@+id/menu_navigation"
-        android:layout_marginTop="2dp"
-        android:layout_marginBottom="2dp"
+        android:layout_margin="@dimen/padding_general"
         android:scrollbars="vertical" />
 
 <!--    <ProgressBar-->

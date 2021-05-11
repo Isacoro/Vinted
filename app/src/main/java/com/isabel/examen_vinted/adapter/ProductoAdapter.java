@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -30,6 +31,7 @@ public class ProductoAdapter extends RecyclerView.Adapter<ProductoAdapter.Produc
         public TextView nombre;
         public TextView descripcion;
         public TextView precio;
+        public Button comprar;
 
         public ProductoViewHolder(@NonNull View view) {
             super(view);
@@ -38,6 +40,7 @@ public class ProductoAdapter extends RecyclerView.Adapter<ProductoAdapter.Produc
             nombre = view.findViewById(R.id.txtNombre);
             descripcion = view.findViewById(R.id.txtDescripcion);
             precio = view.findViewById(R.id.txtPrecio);
+            comprar = view.findViewById(R.id.btComprar);
         }
     }
 

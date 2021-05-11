@@ -7,12 +7,12 @@ import com.isabel.examen_vinted.beans.Usuario;
 public interface RegistroUsuarioContract {
 
     interface View{
-        void succesRegistro(Usuario usuario);
+        void successRegistro(Usuario usuario);
         void error(String message);
     }
 
     interface Presenter{
-        void getRegistroUsuario(Context context);
+        void getRegistroUsuario(Context context, Usuario usuario);
     }
 
     interface Model{

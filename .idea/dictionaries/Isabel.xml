@@ -2,6 +2,7 @@
   <dictionary name="Isabel">
     <words>
       <w>apellidos</w>
+      <w>bienvenido</w>
       <w>carga</w>
       <w>categoria</w>
       <w>categoría</w>
@@ -9,6 +10,7 @@
       <w>cuenta</w>
       <w>datos</w>
       <w>descripcion</w>
+      <w>detalle</w>
       <w>elegir</w>
       <w>imagen</w>
       <w>inicio</w>
@@ -17,10 +19,12 @@
       <w>navegar</w>
       <w>niños</w>
       <w>nombre</w>
+      <w>nuevo</w>
       <w>precio</w>
       <w>producto</w>
       <w>productos</w>
       <w>puntos</w>
+      <w>registro</w>
       <w>selecciona</w>
       <w>todas</w>
       <w>traer</w>
