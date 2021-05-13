@@ -9,24 +9,25 @@
     android:orientation="vertical">
 
     <RelativeLayout
+        android:id="@+id/elegir_categoria"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/elegir_categoria"
-        android:background="@color/colorPrimary"
-        android:layout_marginBottom="10dp">
+        android:background="@color/colorPrimary">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/colorWhite"
             android:text="@string/activity_list_spinner"
-            android:textSize="20dp"/>
+            android:textColor="@color/colorWhite"
+            android:textSize="15dp"
+            android:layout_marginLeft="250dp"/>
+
         <Spinner
             android:id="@+id/spinnerFiltro"
-            android:layout_alignParentEnd="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="13dp"/>
+            android:layout_alignParentEnd="true"
+            android:backgroundTint="@color/colorWhite" />
     </RelativeLayout>
 
     <androidx.recyclerview.widget.RecyclerView

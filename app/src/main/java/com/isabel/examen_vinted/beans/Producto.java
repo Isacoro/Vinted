@@ -1,5 +1,7 @@
 package com.isabel.examen_vinted.beans;
 
+import android.text.Editable;
+
 import com.google.gson.annotations.SerializedName;
 
 public class Producto {
@@ -19,12 +21,22 @@ public class Producto {
     @SerializedName("url")
     private String url;
 
+    private long idUsuario;
+
+    public long getIdUsuario() {
+        return idUsuario;
+    }
+
+    public void setIdUsuario(long idUsuario) {
+        this.idUsuario = idUsuario;
+    }
 
     private Usuario usuario;
 
     public String getUsuario(){
         return usuario.getNombre();
     }
+
     public void setUsuario(Usuario usuario){
         this.usuario = usuario;
     }
@@ -89,11 +101,15 @@ public class Producto {
     @Override
     public String toString() {
         return "Producto{" +
-                "id=" + idProducto +
+                "idProducto=" + idProducto +
                 ", nombre='" + nombre + '\'' +
                 ", descripcion='" + descripcion + '\'' +
-                ", precio='" + precio + '\'' +
+                ", precio=" + precio +
+                ", puntos=" + puntos +
                 ", categoria='" + categoria + '\'' +
+                ", url='" + url + '\'' +
+                ", idUsuario=" + idUsuario +
+                ", usuario=" + usuario +
                 '}';
     }
 }

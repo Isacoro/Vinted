@@ -33,8 +33,6 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity implements ListaProductosContract.View {
 
     private ListaProductosPresenter listaProductosPresenter;
-    private RecyclerView recycler;
-    private RecyclerView.LayoutManager layoutManager;
     private FragmentManager fragmentManager;
     private RelativeLayout relativeLayout;
     private BottomNavigationView bottomNavigationView;

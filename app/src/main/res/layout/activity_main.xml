@@ -1,59 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_principal"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F8F5F5"
+    android:backgroundTint="#F6F2F2"
     android:orientation="vertical"
-    android:id="@+id/layout_principal"
     tools:context=".MainActivity">
 
     <RelativeLayout
+        android:id="@+id/elegir_categoria"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/elegir_categoria"
         android:background="@color/colorPrimary">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/colorWhite"
             android:text="@string/activity_list_spinner"
-            android:textSize="20dp"/>
+            android:textColor="@color/colorWhite"
+            android:textSize="15dp"
+            android:layout_marginLeft="250dp"/>
+
         <Spinner
             android:id="@+id/spinnerFiltro"
-            android:layout_alignParentEnd="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="13dp"/>
+            android:layout_alignParentEnd="true"
+            android:backgroundTint="@color/colorWhite" />
     </RelativeLayout>
 
 
     <LinearLayout
         android:id="@+id/layout_fragment"
-        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/elegir_categoria"
         android:layout_above="@+id/menu_navigation"
+        android:layout_below="@+id/elegir_categoria"
         android:layout_margin="@dimen/padding_general"
+        android:orientation="vertical"
         android:scrollbars="vertical" />
 
-<!--    <ProgressBar-->
-<!--        android:id="@+id/activity_ProgressBar"-->
-<!--        android:layout_width="80dp"-->
-<!--        android:layout_height="80dp"-->
-<!--        android:layout_centerInParent="true"-->
-<!--        android:layout_gravity="center"/>-->
+    <!--    <ProgressBar-->
+    <!--        android:id="@+id/activity_ProgressBar"-->
+    <!--        android:layout_width="80dp"-->
+    <!--        android:layout_height="80dp"-->
+    <!--        android:layout_centerInParent="true"-->
+    <!--        android:layout_gravity="center"/>-->
 
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/menu_navigation"
         style="@style/Widget.MaterialComponents.BottomNavigationView.Colored"
-        android:layout_alignParentBottom="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:menu="@menu/style_menu_navigation"/>
+        android:layout_alignParentBottom="true"
+        app:menu="@menu/style_menu_navigation" />
 
 </RelativeLayout>

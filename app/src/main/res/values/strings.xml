@@ -18,4 +18,5 @@
     <string name="usuarios_ventas">Ventas:</string>
     <string name="usuario_top_nombre">Nombre</string>
     <string name="usuario_top_ciudad">Ciudad</string>
+    <string name="activity_nuevo_producto">Nuevo Producto</string>
 </resources>

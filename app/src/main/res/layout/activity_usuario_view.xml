@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".usuarios.login.UsuarioView"
+    android:orientation="vertical"
+    android:layout_margin="@dimen/padding_general">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="550dp"
+        android:orientation="vertical">
+    <TextView
+        android:id="@+id/texTittle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mi Cuenta"
+        android:textSize="50dp"
+        android:gravity="center"
+        android:background="@color/colorPrimary"
+        android:textColor="@color/colorWhite"
+        />
+
+    <TextView
+        android:id="@+id/textProductos"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Mis Productos"
+        android:textSize="20dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:background="@color/colorPrimary"
+        android:textColor="@color/colorWhite"
+        android:layout_marginTop="150dp"
+        />
+
+    <TextView
+        android:id="@+id/textMensajes"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Mis Favoritos"
+        android:textSize="20dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:background="@color/colorPrimary"
+        android:textColor="@color/colorWhite"
+        android:layout_marginTop="20dp"
+        />
+
+    <TextView
+        android:id="@+id/textMisVentas"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Mis Ventas"
+        android:textSize="20dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:background="@color/colorPrimary"
+        android:textColor="@color/colorWhite"
+        android:layout_marginTop="20dp"
+        />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="horizontal">
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/activity_usuario_home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/colorWhite"
+        app:backgroundTint="@color/colorPrimary"
+        android:layout_marginLeft="30dp"
+        app:srcCompat="@drawable/home"
+        app:tint="@color/colorPrimary" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/activity_usuario_anadir"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="200dp"
+            android:backgroundTint="@color/colorWhite"
+            app:backgroundTint="@color/colorPrimary"
+            app:rippleColor="@color/colorWhite"
+            app:srcCompat="@drawable/anadir_producto"
+            app:tint="@color/colorPrimary" />
+
+</LinearLayout>
+</LinearLayout>

@@ -4,6 +4,7 @@ import android.content.Context;
 
 import com.isabel.examen_vinted.beans.Usuario;
 import com.isabel.examen_vinted.retrofit.ApiClient;
+import com.isabel.examen_vinted.retrofit.UsuarioApi;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -11,11 +12,11 @@ import retrofit2.Response;
 
 public class RegistroUsuarioModel implements RegistroUsuarioContract.Model{
     @Override
-    public void getRegistroUsuarioWS(Context context, OnLoginRegistroUsuarioListener onLoginRegistroUsuarioListener, Usuario usuario) {
+    public void getRegistroUsuarioWS(OnLoginRegistroUsuarioListener onLoginRegistroUsuarioListener, Usuario usuario) {
 
-        ApiClient apiClient = new ApiClient(context);
+        UsuarioApi usuarioApi = new UsuarioApi(usuario);
 
-        final Call<Usuario> request = apiClient.saveUsuarios(usuario);
+        final Call<Usuario> request = usuarioApi.saveUsuario(usuario);
 
         request.enqueue(new Callback<Usuario>() {
 

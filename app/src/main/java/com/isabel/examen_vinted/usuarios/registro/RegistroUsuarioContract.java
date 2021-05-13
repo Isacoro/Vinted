@@ -12,11 +12,11 @@ public interface RegistroUsuarioContract {
     }
 
     interface Presenter{
-        void getRegistroUsuario(Context context, Usuario usuario);
+        void getRegistroUsuario(Usuario usuario);
     }
 
     interface Model{
-        void getRegistroUsuarioWS(Context context, OnLoginRegistroUsuarioListener onLoginRegistroUsuarioListener, Usuario usuario);
+        void getRegistroUsuarioWS(OnLoginRegistroUsuarioListener onLoginRegistroUsuarioListener, Usuario usuario);
 
         interface OnLoginRegistroUsuarioListener{
             void onFinished(Usuario usuario);

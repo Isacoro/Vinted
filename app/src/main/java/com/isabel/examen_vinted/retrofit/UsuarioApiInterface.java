@@ -17,7 +17,7 @@ public interface UsuarioApiInterface {
     @GET("usuarios")
     Call<List<Usuario>> getUsuarios();
 
-    //Registrar usuario
+    //Registrar usuario   http://192.168.1.19:8082/usuarios?nombre=Angela&apellidos=Martinez Sanchez&ciudad=Zaragoza&email=angela@gmail.com&password=123
     @POST("usuarios")
     Call<Usuario> saveUsuario(@Body Usuario usuario);
 

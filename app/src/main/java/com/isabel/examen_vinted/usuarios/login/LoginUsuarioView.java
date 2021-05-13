@@ -1,9 +1,7 @@
 package com.isabel.examen_vinted.usuarios.login;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -11,10 +9,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.material.textfield.TextInputLayout;
 import com.isabel.examen_vinted.MainActivity;
 import com.isabel.examen_vinted.R;
 import com.isabel.examen_vinted.beans.Usuario;
-import com.isabel.examen_vinted.productos.listaProductos.ListaProductosFragment;
 import com.isabel.examen_vinted.usuarios.registro.RegistroUsuarioView;
 
 
@@ -23,6 +21,8 @@ public class LoginUsuarioView extends AppCompatActivity implements LoginUsuarioC
 
     private EditText email;
     private EditText password;
+    private TextInputLayout textInputLayoutEmail;
+    private TextInputLayout textInputLayoutPassword;
     private Button login, registro;
     private LoginUsuarioPresenter loginUsuarioPresenter;
 
@@ -38,9 +38,11 @@ public class LoginUsuarioView extends AppCompatActivity implements LoginUsuarioC
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 loginUsuarioPresenter.getUsuarioLogin(getBaseContext(),
                         email.getText().toString(),
-                        password.getText().toString());
+                        password.getText().toString()
+                );
             }
         });
 
@@ -59,21 +61,22 @@ public class LoginUsuarioView extends AppCompatActivity implements LoginUsuarioC
         password = findViewById(R.id.edtPassword);
         login = findViewById(R.id.btLogin);
         registro = findViewById(R.id.btRegistro);
+        textInputLayoutEmail = findViewById(R.id.activity_login_textinput_layout_email);
+        textInputLayoutPassword = findViewById(R.id.activity_login_textinput_layout_password);
     }
 
 
     @Override
-    public void successLogin(@NonNull Usuario usuario) {
-        Intent navegar = new Intent(getBaseContext(), MainActivity.class);
+    public void successLogin(Usuario usuario) {
+        Intent navegar = new Intent(getBaseContext(), UsuarioView.class);
         startActivity(navegar);
 
-        Toast.makeText(this, "Bienvenido ", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Bienvenido", Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void error(String message) {
-        System.out.println(message);
-
+        Toast.makeText(this,"El usuario no existe", Toast.LENGTH_SHORT).show();
     }
 }
 

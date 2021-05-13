@@ -16,8 +16,8 @@ public class RegistroUsuarioPresenter implements RegistroUsuarioContract.Present
 
 
     @Override
-    public void getRegistroUsuario(Context context, Usuario usuario) {
-        registroUsuarioModel.getRegistroUsuarioWS(context, new RegistroUsuarioContract.Model.OnLoginRegistroUsuarioListener(){
+    public void getRegistroUsuario(Usuario usuario) {
+        registroUsuarioModel.getRegistroUsuarioWS(new RegistroUsuarioContract.Model.OnLoginRegistroUsuarioListener(){
 
             @Override
             public void onFinished(Usuario usuario) {

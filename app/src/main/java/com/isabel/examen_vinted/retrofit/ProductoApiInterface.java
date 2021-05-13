@@ -3,7 +3,6 @@ package com.isabel.examen_vinted.retrofit;
 import com.isabel.examen_vinted.beans.Producto;
 
 import java.util.List;
-import java.util.Set;
 
 import retrofit2.Call;
 import retrofit2.http.Body;

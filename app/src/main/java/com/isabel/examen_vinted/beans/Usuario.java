@@ -94,13 +94,14 @@ public class Usuario {
     @Override
     public String toString() {
         return "Usuario{" +
-                "id=" + idUsuario +
+                "idUsuario=" + idUsuario +
                 ", nombre='" + nombre + '\'' +
                 ", apellidos='" + apellidos + '\'' +
-                ", ciudad='" + ciudad + '\'' +
-                ", password='" + password + '\'' +
                 ", email='" + email + '\'' +
-                ", ventas='" + ventas + '\'' +
+                ", password='" + password + '\'' +
+                ", ciudad='" + ciudad + '\'' +
+                ", ventas=" + ventas +
+                ", puntos=" + puntos +
                 '}';
     }
 }

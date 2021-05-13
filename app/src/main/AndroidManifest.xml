@@ -12,6 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Examen_Vinted"
         android:usesCleartextTraffic="true">
+        <activity android:name=".usuarios.login.UsuarioView"></activity>
+        <activity android:name=".productos.anadirProducto.AnadirProductoView" />
         <activity android:name=".splashScreen.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,11 +21,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".usuarios.login.LoginUsuarioView"/>
+        <activity android:name=".usuarios.login.LoginUsuarioView" />
         <activity android:name=".usuarios.registro.RegistroUsuarioView" />
         <activity android:name=".productos.categoriaProductos.CategoriaProductoView" />
         <activity android:name=".productos.listaProductos.DetalleProductosView" />
-        <activity android:name=".MainActivity">
-        </activity>
+        <activity android:name=".MainActivity" />
     </application>
 </manifest>

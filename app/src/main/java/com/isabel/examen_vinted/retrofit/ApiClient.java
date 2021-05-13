@@ -44,11 +44,11 @@ public class ApiClient {
         return service.getProductosCategoria(categoria);
     }
 
-    //Añadir producto
-    public Call<Producto> saveProducto(Producto producto){
-        ProductoApiInterface service = retrofit.create(ProductoApiInterface.class);
-        return  service.saveProducto(producto);
-    }
+//    //Añadir producto
+//    public Call<Producto> saveProducto(Producto producto){
+//        ProductoApiInterface service = retrofit.create(ProductoApiInterface.class);
+//        return  service.saveProducto(producto);
+//    }
 
     //Todos los usuarios
     public Call<List<Usuario>> getUsuarios(){
@@ -56,11 +56,11 @@ public class ApiClient {
         return service.getUsuarios();
     }
 
-    //Registro usuario
-    public Call<Usuario> saveUsuarios(Usuario usuario){
-        UsuarioApiInterface service = retrofit.create(UsuarioApiInterface.class);
-        return service.saveUsuario(usuario);
-    }
+//    //Registro usuario
+//    public Call<Usuario> saveUsuarios(Usuario usuario){
+//        UsuarioApiInterface service = retrofit.create(UsuarioApiInterface.class);
+//        return service.saveUsuario(usuario);
+//    }
 
     //Login usuario
     public Call<Usuario> getUsuarioLogin(String email, String password){

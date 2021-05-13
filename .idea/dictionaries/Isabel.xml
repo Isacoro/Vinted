@@ -1,7 +1,9 @@
 <component name="ProjectDictionaryState">
   <dictionary name="Isabel">
     <words>
+      <w>anadir</w>
       <w>apellidos</w>
+      <w>añadido</w>
       <w>bienvenido</w>
       <w>carga</w>
       <w>categoria</w>
@@ -12,6 +14,8 @@
       <w>descripcion</w>
       <w>detalle</w>
       <w>elegir</w>
+      <w>existe</w>
+      <w>filtro</w>
       <w>imagen</w>
       <w>inicio</w>
       <w>lista</w>
@@ -31,6 +35,7 @@
       <w>usuario</w>
       <w>usuarios</w>
       <w>ventas</w>
+      <w>zaragoza</w>
     </words>
   </dictionary>
 </component>
