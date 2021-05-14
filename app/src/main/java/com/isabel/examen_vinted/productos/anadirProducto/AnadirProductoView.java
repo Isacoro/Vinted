@@ -12,6 +12,7 @@ import android.widget.Toast;
 import com.isabel.examen_vinted.MainActivity;
 import com.isabel.examen_vinted.R;
 import com.isabel.examen_vinted.beans.Producto;
+import com.isabel.examen_vinted.beans.ProductoDTO;
 
 public class AnadirProductoView extends AppCompatActivity implements AnadirProductoContract.View {
 
@@ -32,14 +33,14 @@ public class AnadirProductoView extends AppCompatActivity implements AnadirProdu
         aceptar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Producto producto = new Producto();
+                ProductoDTO productoDTO = new ProductoDTO();
 
-                producto.setNombre(etNombre.getText().toString());
-                producto.setDescripcion(etDescripcion.getText().toString());
-                producto.setPrecio(etPrecio.getAlpha());
-                producto.setCategoria(etCategoria.getText().toString());
+                productoDTO.setNombre(etNombre.getText().toString());
+                productoDTO.setDescripcion(etDescripcion.getText().toString());
+                productoDTO.setPrecio(Float.parseFloat(etPrecio.getText().toString()));
+                productoDTO.setCategoria(etCategoria.getText().toString());
 
-                anadirProductoPresenter.getAddProducto(producto);
+                anadirProductoPresenter.addProducto(v.getContext(), productoDTO);
             }
         });
     }

@@ -23,12 +23,12 @@ android {
         debug{
 
 //            buildConfigField STRING, "URL_BASE", '"http://10.0.2.2:8082/"'
-            buildConfigField STRING, "URL_BASE", '"http://192.168.1.19:8082/"'
+            buildConfigField STRING, "URL_BASE", '"http://192.168.1.19:8081/"'
         }
 
         release {
 //            buildConfigField STRING, "API_URL", '"http://tuUrl.com"'
-            buildConfigField STRING, "URL_BASE", '"http://192.168.1.19:8082/"'
+            buildConfigField STRING, "URL_BASE", '"http://192.168.1.19:8081/"'
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }

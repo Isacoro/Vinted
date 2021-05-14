@@ -4,23 +4,24 @@ package com.isabel.examen_vinted.productos.anadirProducto;
 import android.content.Context;
 
 import com.isabel.examen_vinted.beans.Producto;
+import com.isabel.examen_vinted.beans.ProductoDTO;
 
 public interface AnadirProductoContract {
 
     interface View{
-        void successAddProducto(Producto producto);
+        void successAddProducto(Producto nuevoProducto);
         void error (String message);
     }
 
     interface Presenter{
-        void getAddProducto(Producto producto);
+        void addProducto(Context context, ProductoDTO productoDTO);
     }
 
     interface Model{
-        void getAddProductoWS(OnAddProductoListener onAddProductoListener, Producto producto);
+        void addProductoWS(Context context, OnAddProductoListener onAddProductoListener, ProductoDTO productoDTO);
 
         interface OnAddProductoListener{
-            void onFinished(Producto producto);
+            void onFinished(Producto nuevoProducto);
             void onFailure(String error);
         }
     }

@@ -19,4 +19,6 @@
     <string name="usuario_top_nombre">Nombre</string>
     <string name="usuario_top_ciudad">Ciudad</string>
     <string name="activity_nuevo_producto">Nuevo Producto</string>
+    <string name="activity_registro_apellidos">Apellidos</string>
+    <string name="activity_registro_ciudad">Ciudad</string>
 </resources>

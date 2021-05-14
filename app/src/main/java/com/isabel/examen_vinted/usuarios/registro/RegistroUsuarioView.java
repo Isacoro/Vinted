@@ -12,13 +12,14 @@ import android.widget.Toast;
 import com.isabel.examen_vinted.MainActivity;
 import com.isabel.examen_vinted.R;
 import com.isabel.examen_vinted.beans.Usuario;
+import com.isabel.examen_vinted.beans.UsuarioDTO;
 import com.isabel.examen_vinted.productos.listaProductos.ListaProductosFragment;
 import com.isabel.examen_vinted.usuarios.login.UsuarioView;
 
 public class RegistroUsuarioView extends AppCompatActivity implements RegistroUsuarioContract.View {
 
     private RegistroUsuarioPresenter registroUsuarioPresenter;
-    private EditText edtNombre, edtEmail, edtPassword;
+    private EditText edtNombre, edtApellidos, edtCiudad, edtEmail, edtPassword;
     private Button registrar;
 
     @Override
@@ -34,14 +35,16 @@ public class RegistroUsuarioView extends AppCompatActivity implements RegistroUs
             @Override
             public void onClick(View v) {
 
-                Usuario usuario = new Usuario();
+                UsuarioDTO usuarioDTO = new UsuarioDTO();
 
-                usuario.setNombre(edtNombre.getText().toString());
-                usuario.setEmail(edtEmail.getText().toString());
-                usuario.setPassword(edtPassword.getText().toString());
+                usuarioDTO.setNombre(edtNombre.getText().toString());
+                usuarioDTO.setApellidos(edtApellidos.getText().toString());
+                usuarioDTO.setCiudad(edtCiudad.getText().toString());
+                usuarioDTO.setEmail(edtEmail.getText().toString());
+                usuarioDTO.setPassword(edtPassword.getText().toString());
 
 
-                registroUsuarioPresenter.getRegistroUsuario(usuario);
+                registroUsuarioPresenter.addUsuario(v.getContext(), usuarioDTO);
             }
         });
     }
@@ -49,6 +52,8 @@ public class RegistroUsuarioView extends AppCompatActivity implements RegistroUs
 
     private void initComponents(){
         edtNombre= findViewById(R.id.edtNombre);
+        edtApellidos = findViewById(R.id.edtApellidos);
+        edtCiudad = findViewById(R.id.edtCiudad);
         edtEmail = findViewById(R.id.edtEmail);
         edtPassword = findViewById(R.id.edtPassword);
         registrar = findViewById(R.id.btAceptar);

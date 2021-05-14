@@ -3,8 +3,8 @@ package com.isabel.examen_vinted.productos.anadirProducto;
 import android.content.Context;
 
 import com.isabel.examen_vinted.beans.Producto;
+import com.isabel.examen_vinted.beans.ProductoDTO;
 import com.isabel.examen_vinted.retrofit.ApiClient;
-import com.isabel.examen_vinted.retrofit.ProductoApi;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -13,17 +13,17 @@ import retrofit2.Response;
 public class AnadirProductoModel implements AnadirProductoContract.Model {
 
     @Override
-    public void getAddProductoWS(OnAddProductoListener onAddProductoListener, Producto producto) {
+    public void addProductoWS(Context context, OnAddProductoListener onAddProductoListener, ProductoDTO productoDTO) {
 
-        ProductoApi productoApi = new ProductoApi(producto);
+        ApiClient apiClient = new ApiClient(context);
 
-        final Call<Producto> request = productoApi.saveProducto(producto);
+        final Call<Producto> request = apiClient.addProducto(productoDTO);
 
         request.enqueue(new Callback<Producto>() {
 
             @Override
             public void onResponse(Call<Producto> call, Response<Producto> response) {
-                onAddProductoListener.onFinished(producto);
+                onAddProductoListener.onFinished(response.body());
 
             }
 

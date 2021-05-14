@@ -1,6 +1,7 @@
 package com.isabel.examen_vinted.retrofit;
 
 import com.isabel.examen_vinted.beans.Producto;
+import com.isabel.examen_vinted.beans.ProductoDTO;
 
 import java.util.List;
 
@@ -26,5 +27,5 @@ public interface ProductoApiInterface {
 
     //Añadir producto
     @POST("productos")
-    Call<Producto> saveProducto(@Body Producto producto);
+    Call<Producto> addProducto(@Body ProductoDTO productoDTO);
 }

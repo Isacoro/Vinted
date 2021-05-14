@@ -1,6 +1,7 @@
 package com.isabel.examen_vinted.retrofit;
 
 import com.isabel.examen_vinted.beans.Usuario;
+import com.isabel.examen_vinted.beans.UsuarioDTO;
 
 import java.util.List;
 
@@ -17,9 +18,9 @@ public interface UsuarioApiInterface {
     @GET("usuarios")
     Call<List<Usuario>> getUsuarios();
 
-    //Registrar usuario   http://192.168.1.19:8082/usuarios?nombre=Angela&apellidos=Martinez Sanchez&ciudad=Zaragoza&email=angela@gmail.com&password=123
+    //Registrar usuario
     @POST("usuarios")
-    Call<Usuario> saveUsuario(@Body Usuario usuario);
+    Call<Usuario> addUsuario(@Body UsuarioDTO usuarioDTO);
 
     //Login usuario
     @GET("usuarios/email-password")
