@@ -13,6 +13,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.isabel.examen_vinted.MainActivity;
 import com.isabel.examen_vinted.R;
 import com.isabel.examen_vinted.adapter.ProductoAdapter;
 import com.isabel.examen_vinted.beans.Producto;

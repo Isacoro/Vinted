@@ -111,7 +111,6 @@ public class MainActivity extends AppCompatActivity implements ListaProductosCon
         TopUsuarioFragment topUsuarioFragment = new TopUsuarioFragment();
         transaction.replace(R.id.layout_fragment, topUsuarioFragment);
         transaction.commit();
-
     }
 
     @Override
